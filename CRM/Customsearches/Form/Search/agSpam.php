@@ -251,7 +251,7 @@ END_SQL;
       $clauses [] = "(contact_a.id > $min_contact_id)";
     }
 
-    $blank_names = CRM_Utils_Array::value('blank_names', $this->_formValues);
+    $blank_names = $this->_formValues['blank_names'] ?? NULL;
     if ($blank_names) {
       $clauses [] = "(contact_a.first_name AND contact_a.last_name)";
     }
